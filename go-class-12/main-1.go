@@ -15,5 +15,5 @@ type Employee struct {
 func main() {
 	var e Employee
 
-	fmt.Printf("%T %v\n", e)
+	fmt.Printf("%T %[1]v\n", e)
 }
