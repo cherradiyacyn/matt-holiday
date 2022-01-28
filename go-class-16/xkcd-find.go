@@ -74,3 +74,6 @@ outer:
 
 	fmt.Fprintf(os.Stderr, "found %d comics\n", cnt)
 }
+
+// how to run ?
+// go run ./xkcd-find.go xkcd.json someone bed time

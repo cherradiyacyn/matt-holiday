@@ -84,3 +84,6 @@ func main() {
 		fmt.Fprintf(os.Stderr, "read %d comics\n", cnt)
 	}
 }
+
+// how to run ?
+// go run ./xkcd.go xkcd.json
