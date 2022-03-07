@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Point struct {
 	x, y float32
 }
@@ -14,10 +16,15 @@ func (p Point) OffsetOf(p1 Point) (x float32, y float32) {
 }
 
 func main() {
-	p1 := new(Point) //*Point, at(0,0)
+	p1 := new(Point) // *Point, at(0,0)
+	fmt.Println("p1: ", p1)
 	p2 := Point{1, 1}
-	p1.OffsetOf(p2) //same as (*p1).OffsetOf(p2)
-	p2.Add(3, 4)    //same as (&p2).Add(3,4)
+	fmt.Println("p2: ", p2)
+	fmt.Printf("p1.OffsetOf(p2): ")
+	fmt.Println(p1.OffsetOf(p2)) // same as (*p1).OffsetOf(p2)
+	fmt.Printf("p2.Add(3, 4): ")
+	p2.Add(3, 4) // same as (&p2).Add(3,4)
+	fmt.Println(p2)
 }
 
 // Compatibility between objects and receiver types
