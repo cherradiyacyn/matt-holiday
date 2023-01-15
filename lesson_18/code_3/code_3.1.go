@@ -21,12 +21,25 @@ type Path []Point
 
 func (p Path) Distance() (sum float64) {
 	for i := 1; i < len(p); i++ {
-		sum += Line{p[i+1], p[i]}.Distance()
+		sum += Line{p[i-1], p[i]}.Distance()
 	}
 	return sum
 }
 
+type Distancer interface {
+	Distance() float64
+}
+
+func printDistance(d Distancer) {
+	fmt.Println(d.Distance())
+}
+
 func main() {
 	side := Line{Point{1, 2}, Point{4, 6}}
-	fmt.Println(side.Distance())
+	// fmt.Println(side.Distance())
+	printDistance(side)
+
+	perimeter := Path{{1, 1}, {5, 1}, {5, 4}, {1, 1}}
+	// fmt.Println(perimeter.Distance())
+	printDistance(perimeter)
 }
